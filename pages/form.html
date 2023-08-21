@@ -1,0 +1,23 @@
+<form>
+  <div>
+    <label>Name</label>
+    <input type="text" ng-model="item.name" />
+  </div>
+  <div>
+    <label>Genre</label>
+
+    <input type="text" ng-model="item.genre" />
+  </div>
+  <div>
+    <label>Pages</label>
+
+    <input type="number" ng-model="item.pages" />
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="number" ng-model="item.price" />
+  </div>
+  <div>
+    <button ng-click="addItem(item)">Add</button>
+  </div>
+</form>

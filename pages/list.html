@@ -1,0 +1,49 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Genre</th>
+    <th>Pages</th>
+    <th>Price</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in sharedItems">
+      <td>
+        <span ng-hide="editMode"> {{item.name}} </span>
+        <input type="text" ng-show="editMode" ng-model="item.name" />
+      </td>
+      <td>
+        <span ng-hide="editMode">{{item.genre}}</span>
+        <input type="text" ng-show="editMode" ng-model="item.genre" />
+      </td>
+      <td>
+        <span ng-hide="editMode">{{item.pages}}</span>
+        <input type="text" ng-show="editMode" ng-model="item.pages" />
+      </td>
+      <td>
+        <span ng-hide="editMode">{{item.price}}</span>
+        <input type="text" ng-show="editMode" ng-model="item.price" />
+      </td>
+      <td>
+        <i
+          ng-hide="editMode"
+          ng-click="editMode=true; editItem(item) "
+          class="glyphicon glyphicon-edit"
+        >
+        </i>
+        <i
+          class="glyphicon glyphicon-saved"
+          ng-show="editMode"
+          ng-click="editMode=false"
+        ></i>
+      </td>
+      <td>
+        <i ng-click="removeItem($index)" class="glyphicon glyphicon-trash"></i>
+      </td>
+    </tr>
+    <div>
+      <button ng-click="addMore()">Add More</button>
+    </div>
+  </tbody>
+</table>
